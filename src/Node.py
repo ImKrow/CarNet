@@ -12,3 +12,7 @@ class Node(object):
         print(1)
         return [self.x,self.y]
 
+    x = 3
+
+    print('1+x=')
+
