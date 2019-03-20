@@ -1,5 +1,5 @@
 class Node(object):
-    
+
     def __init__(self, x, y, minSpeed, maxSpeed):
         self.x = x
         self.y = y
@@ -9,5 +9,6 @@ class Node(object):
 
     #
     def get_location(self):
+        print(1)
         return [self.x,self.y]
 
