@@ -1,15 +1,15 @@
 class Node(object):
 
-    def __init__(self, x, y, minSpeed, maxSpeed):
+    def __init__(self, x, y, min_speed, max_speed):
         self.x = x
         self.y = y
-        self.minSpeed = minSpeed
-        self.maxSpeed = maxSpeed
+        self.min_speed = min_speed
+        self.max_speed = max_speed
         self.location = [x,y]
 
-    #
+
     def get_location(self):
-        print(1)
         return [self.x,self.y]
 
-    print("print fuck you github")
+    def get_current_speed(self):
+        return self.max_speed
