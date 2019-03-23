@@ -1,4 +1,7 @@
+
+
 class Node(object):
+
 
     def __init__(self, x, y, min_speed, max_speed):
         self.x = x
@@ -13,3 +16,5 @@ class Node(object):
 
     def get_current_speed(self):
         return self.max_speed
+
+
