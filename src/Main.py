@@ -1,35 +1,42 @@
-from src.Node import Node
 import pygame
+from src.maptile import maptile
+pygame.init()
 
+size = [800, 600]
+grid = []
 
-class Main():
-    RED = (100,0,150)
-    GREEN = (0, 175, 0)
-    BLUE = (0, 0 , 255)
-    game = pygame
-    game.init()
-    display_width = 800
-    display_height = 600
-    window = game.display.set_mode((display_width,display_height))
-    car = Node(1, 2, 3)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0,)
+RED = (255, 0, 0)
 
+screen = pygame.display.set_mode(size)
+carImg = pygame.image.load('BG_1.png')
+clock = pygame.time.Clock()
 
-    print(car.get_current_speed())
-    print(car.get_location())
+done = False
+x = 16
+y = 12
+for i in range(0, x):
+    grid.append([])
+for i in range(0, y):
+    for j in range(0, x):
+        grid[i].append(j)
+        grid[i][j] = 0
 
-    
-    clock = game.time.Clock()
-    playing = True
+while not done:
+    for i in range grid[0, i]:
+        for j in grid[j][j]:
+            tile = maptile.render(i*40, j*40)
 
-    while playing:
-        clock.tick(60)
-        for event in game.event.get():
-            if event.type == game.QUIT:
-                playing = False
+    clock.tick(10)
+    screen.fill(WHITE)
+    screen.blit(carImg, (0, 0))
 
-        car.render(window)
-        window.fill(GREEN)
-        game.display.update()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
 
+    pygame.display.flip()
 
-    game.quit()
+pygame.quit()
+
