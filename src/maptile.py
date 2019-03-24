@@ -1,5 +1,6 @@
 import pygame
 
+
 class maptile(object):
 
     def __init__(self):
