@@ -8,6 +8,7 @@ class Main:
         self.screen = screen
         self.running = True
         self.tile = maptile()
+        self.node = Node(10,10,15,30)
         self.clock = pygame.time.Clock()
         self.main_loop()
         self.map_init()
@@ -19,12 +20,16 @@ class Main:
     def render(self):
         self.tile.render(screen,0,0)
         self.map_init()
+        self.node.render(screen)
+
         pygame.display.flip()
 
     def main_loop(self):
         while self.running == True:
+            self.clock.tick(60)
             self.handle_events()
             self.render()
+            self.node.move()
 
     def map_init(self):
         row = 12
